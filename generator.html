@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generator Prompt OPR Cikgu</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; }
+    label { font-weight: bold; }
+    input { width: 100%; padding: 8px; margin: 8px 0 20px 0; }
+    button { padding: 10px 15px; background-color: #28a745; color: white; border: none; cursor: pointer; font-size: 16px; }
+    textarea { width: 100%; padding: 10px; margin-top: 10px; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <h2>Generator Prompt OPR</h2>
+  <p>Sila masukkan maklumat kelas di bawah:</p>
+
+  <label>📚 Subjek:</label>
+  <input type="text" id="subjek" placeholder="Contoh: Sains">
+
+  <label>🏫 Tahun / Tingkatan:</label>
+  <input type="text" id="tahun" placeholder="Contoh: Tahun 4">
+
+  <label>🎯 Topik:</label>
+  <input type="text" id="topik" placeholder="Contoh: Tenaga">
+
+  <button onclick="janaPrompt()">Jana Prompt</button>
+
+  <h3>Hasil Prompt Anda:</h3>
+  <textarea id="hasilPrompt" rows="6"></textarea>
+
+  <script>
+    function janaPrompt() {
+      // 1. Ambil maklumat yang cikgu taip dalam kotak
+      var subjek = document.getElementById("subjek").value;
+      var tahun = document.getElementById("tahun").value;
+      var topik = document.getElementById("topik").value;
+
+      // 2. Cantumkan maklumat tersebut ke dalam templat
+      var promptLengkap = "Bertindak sebagai guru pakar mata pelajaran " + subjek + ". Saya sedang merancang kelas untuk murid " + tahun + ". Topik pembelajaran hari ini adalah " + topik + ". Tolong hasilkan Objektif Pembelajaran (OP), Kriteria Kejayaan (KK), dan 3 cadangan aktiviti pengajaran dan pembelajaran (PdP) abad ke-21. Susun maklumat ini dalam format jadual.";
+
+      // 3. Tunjukkan hasil di dalam kotak teks
+      document.getElementById("hasilPrompt").value = promptLengkap;
+    }
+  </script>
+
+</body>
+</html>
